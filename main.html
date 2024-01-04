@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <title>for kngannhk</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="birthday-card">
+            <h1>생일 축하해요</h1>
+            <p>to: <strong>Ha Kieu Kim Ngan</strong> </p>
+            <p>Hiiií lôoo</p>
+            <p>Đây là một phiên bản có thêm vài lời chúc sinh nhật bà</p>
+            <p>Bà bấm nút ở dưới với nút di chuyển kế bên để xem hếttt nhaaa</p>
+            <button id="playButton">Ấn vào đâyyy iiii</button>
+        </div>
+        <div id="particles-js"></div>
+
+    </div>
+    <!-- Bảng và hình ảnh -->
+    <div class="content-container">
+
+        <img src="/image/1.png" alt="Image 1">
+        <img src="/image/2.jpg" alt="Image 2">
+        <img src="/image/3.png" alt="Image 3">
+        <img src="/image/4.png" alt="Image 4">
+        <img src="/image/5.png" alt="Image 5">
+        <img src="/image/6.png" alt="Image 6">
+        <img src="/image/7.png" alt="Image 7">
+        <img src="/image/8.png" alt="Image 8">
+        <img src="/image/9.png" alt="Image 9">
+    </div>
+
+    <!-- Nút điều hướng -->
+    <button id="prevButton">&#9664;</button>
+    <button id="nextButton">&#9654;</button>
+
+    <audio id="happyBirthdayAudio" src="audio/happy_birthday.mp3"></audio>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const images = [
+                "/image/cute.jpg",
+                "/image/1.png",
+                "/image/2.jpg",
+                "/image/3.png",
+                "/image/4.png",
+                "/image/5.png",
+                "/image/6.png",
+                "/image/7.png",
+                "/image/8.png",
+                "/image/9.png",
+                "/image/10.png",
+                "/image/11.png",
+                "/image/12.png",
+                "/image/13.png",
+                "/image/14.png",
+                "/image/15.png",
+                "/image/15_1.png",
+                "/image/15_2.png",
+                "/image/16.jpg",
+                "/image/17.jpg",
+                "/image/17_1.jpg",
+                "/image/17_2.jpg",
+                "/image/18.jpg",
+                "/image/19.jpg",
+                "/image/20.jpg",
+                "/image/21.jpg",
+                "/image/22.jpg",
+                "/image/23.jpg",
+                "/image/24.jpg",
+                "/image/25.jpg",
+                "/image/25_1.jpg",
+                "/image/26.jpg",
+                "/image/26_1.jpg",
+                "/image/26_2.jpg",
+                "/image/26_3.jpg",
+                "/image/27.jpg",
+                "/image/28.png",
+                "/image/29.png",
+                "/image/30.png",
+                // Thêm đường dẫn của các hình ảnh khác vào đây
+            ];
+
+            const contentContainer = document.querySelector('.content-container');
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+            let currentIndex = 0;
+
+            function showImage(index) {
+                const imagePath = images[index];
+                contentContainer.innerHTML = `<img src="${imagePath}" alt="Image ${index + 1}">`;
+            }
+
+            showImage(currentIndex);
+
+            prevButton.addEventListener("click", function () {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            });
+
+            nextButton.addEventListener("click", function () {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            });
+        });
+    </script>
+
+    <div class="footer">
+        <p><strong>&copy; Developed by Lam Huynh Khang</strong></p>
+    </div>
+</body>
+
+</html>
